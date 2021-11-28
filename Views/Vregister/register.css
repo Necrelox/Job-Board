@@ -1,0 +1,47 @@
+.box {
+    width: 100%;
+    min-height: 100vh;
+    max-height: 100vh;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    background: #ECE9E6;
+    background: -webkit-linear-gradient(to bottom, #FFFFFF, #ECE9E6);
+    background: linear-gradient(to bottom, #FFFFFF, #ECE9E6);
+    display: inline;
+}
+
+.img-home {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+    clip-path: ellipse(100% 100%);
+}
+
+.margauto {
+    margin: auto;
+}
+
+section {
+
+}
+
+form {
+    text-align: center;
+}
+
+.form_div {
+    max-width: 64em;
+    margin: auto;
+    max-width: 40%;
+    padding: 2px;   
+}
+
+.margin_top {
+    margin-top: 10px;
+}
+
+.btn {
+    margin-top: 20px;
+}

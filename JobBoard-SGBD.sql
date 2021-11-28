@@ -1,0 +1,56 @@
+CREATE DATABASE IF NOT EXISTS JobBoardDB;
+USE JobBoardDB;
+
+CREATE TABLE IF NOT EXISTS companies
+(
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    name varchar(255) NOT NULL,
+    description TEXT(65535) NULL
+) ENGINE = INNODB;
+
+CREATE TABLE IF NOT EXISTS ImgCompany
+(
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    url TEXT(65535) NOT NULL,
+    companie_id INT UNSIGNED NOT NULL,
+    FOREIGN KEY (companie_id) REFERENCES companies(id)
+) ENGINE = INNODB;
+
+
+CREATE TABLE IF NOT EXISTS users
+(
+    uuid VARCHAR(255) PRIMARY KEY UNIQUE KEY,
+    name VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    phone VARCHAR(16) NULL,
+    email VARCHAR(255) NOT NULL,
+    hash VARCHAR(255) NOT NULL,
+    status INT (1) NOT NULL,
+    grade INT NOT NULL DEFAULT 0,
+    companie_id INT UNSIGNED NULL,
+    FOREIGN KEY (companie_id) REFERENCES companies(id)
+) ENGINE = INNODB;
+
+CREATE TABLE IF NOT EXISTS advertisements
+(
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    name varchar(255) NOT NULL,
+    date DATETIME NULL,
+    description TEXT(65535) NOT NULL,
+    wage INT UNSIGNED NULL,
+    workedtime INT UNSIGNED NULL,
+    position VARCHAR(255) NOT NULL,
+    contract VARCHAR(16) NOT NULL,
+    user_uuid VARCHAR(255) NOT NULL,
+    FOREIGN KEY (user_uuid) REFERENCES users(uuid),
+    companie_id INT UNSIGNED NOT NULL,
+    FOREIGN KEY (companie_id) REFERENCES companies(id)
+) ENGINE = INNODB;
+
+CREATE TABLE IF NOT EXISTS ImgAdvertisements
+(
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY NOT NULL,
+    url TEXT(65535) NOT NULL,
+    id_advertisements INT UNSIGNED NOT NULL,
+    FOREIGN KEY (id_advertisements) REFERENCES advertisements(id)
+) ENGINE = INNODB;

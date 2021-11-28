@@ -1,0 +1,54 @@
+h1 {
+    margin-bottom: 40px
+}
+
+label {
+    color: #333
+}
+
+.btn-send {
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    width: 80%;
+    margin-left: 3px
+}
+
+.card {
+    margin-left: 10px;
+    margin-right: 10px
+}
+
+.btn {
+    margin:10px;
+}
+
+.map_google {
+    align-items: center;
+    justify-content: center;
+    display:grid;
+    padding: 50px;
+}
+
+@media (max-width : 700px) {
+    .map_google iframe {
+        max-width: 270px;
+    }
+}
+
+.marge {
+    margin-bottom:20px;
+}
+
+.box_contact {
+    width: 100%;
+    min-height: 160%;
+    max-height: 100%;
+    display: grid;
+    justify-content: center;
+    background: linear-gradient(to bottom, #FFFFFF, #ECE9E6);
+}
+
+.coffee {
+    background: fixed;
+}
